@@ -1,45 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strange Currency – Coming Soon</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       text-align: center;
+      position: relative;
     }
+
+    /* Dark cinematic overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(2px);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 2s ease-in-out;
+      padding: 1rem;
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 600;
       margin-bottom: 1rem;
+      letter-spacing: 1px;
     }
+
     p {
-      max-width: 600px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
     }
-    .ig {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-    .ig a {
-      color: #f5f5f5;
+
+    a {
+      color: #fff;
       text-decoration: underline;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Strange Currency</h1>
-  <p>A gritty docuseries exploring the hustle behind the art. From streetwear to music, it captures real stories of creatives building empires without selling their soul. What do we sacrifice to succeed—and is it worth the cost? 
+  <div class="content">
+    <h1>STRANGE CURRENCY</h1>
+    <p>A cinematic docuseries uncovering the real cost of chasing creative success.  
+    From streetwear to sound, this series follows independent artists pushing culture forward—on their own terms.  
     Coming 2026.</p>
- 
+    <a href="https://instagram.com/directedbybilliejr" target="_blank">@directedbybilliejr</a>
+  </div>
 </body>
 </html>
